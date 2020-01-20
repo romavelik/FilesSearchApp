@@ -15,7 +15,7 @@ public class FilesSearchApp {
             Util.searchFiles(rootPath, depth, mask);
         } catch (IOException e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             try {
                 reader.close();
             } catch (IOException e) {
