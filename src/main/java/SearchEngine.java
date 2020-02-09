@@ -58,15 +58,6 @@ public class SearchEngine implements Runnable{
         return rootPath.split("\\\\");
     }
 
-    private static void printFoundFiles(String directory, List<String> fileNames) {
-        System.out.printf("Files in %s\n", directory);
-        if (fileNames.size() == 0) {
-            System.out.println("No files matching the mask");
-        }
-        for (String fileName : fileNames) {
-            System.out.printf("\t| %s\n", fileName);
-        }
-    }
 
     private static List<String> lookHere(String mask, String path) {
         Pattern pattern = Pattern.compile("(.*)".concat(mask).concat("(.*)"));
@@ -88,10 +79,5 @@ public class SearchEngine implements Runnable{
     @Override
     public void run() {
         searchFiles(rootPath, depth, mask, results, isTerminated);
-//        try {
-//            results.put(new SearchResults("path", Arrays.asList("bla", "bla1")));
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
     }
 }
